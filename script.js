@@ -1,21 +1,30 @@
-"use strict";
-
 /* PROJECT TIC TAC TOE */
 
-const gameboard = {
-  board: ["", "", "", "", "", "", "", "", ""],
-};
+// Gameboard Module
+const GameBoard = (function () {
+  // Create a 3x3 1d board and fill it with ""
+  const board = Array(9).fill("");
+  // Simulate moves
+  board[0] = "O";
+  board[4] = "X";
 
-const player = (name, mark) => {
-  return { name, mark };
-};
+  // Public API
+  return {
+    // Helper function to visualize board in console
+    printBoard() {
+      console.log(`
+        ${board[0] || " "} | ${board[1] || " "} | ${board[2] || " "}
+        ---------
+        ${board[3] || " "} | ${board[4] || " "} | ${board[5] || " "}
+        ---------
+        ${board[6] || " "} | ${board[7] || " "} | ${board[8] || " "}
+        `);
+    },
+    getBoard() {
+      return [...board]; // Return a copy of the board
+    },
+  };
+})();
 
-const player1 = player("Player 1", "X");
-const player2 = player("Player 2", "O");
-
-const game = {
-  currentPlayer: player1,
-  changePlayer() {
-    this.currentPlayer = this.currentPlayer === player1 ? player2 : player1;
-  },
-};
+// Tests
+GameBoard.printBoard();
