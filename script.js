@@ -4,9 +4,6 @@
 const GameBoard = (function () {
   // Create a 3x3 1d board and fill it with ""
   const board = Array(9).fill("");
-  // Simulate moves
-  board[0] = "O";
-  board[4] = "X";
 
   // Public API
   return {
@@ -23,8 +20,21 @@ const GameBoard = (function () {
     getBoard() {
       return [...board]; // Return a copy of the board
     },
+    placeMarker(position, marker) {
+      if (
+        position >= 0 &&
+        position <= board.length - 1 &&
+        board[position] === ""
+      ) {
+        board[position] = marker;
+        return true;
+      } else {
+        return false;
+      }
+    },
   };
 })();
 
 // Tests
+GameBoard.placeMarker(4, "X");
 GameBoard.printBoard();
