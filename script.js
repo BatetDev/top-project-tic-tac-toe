@@ -53,11 +53,31 @@ const GameBoard = (function () {
     reset() {
       board = Array(9).fill("");
     },
+    // Check for winner
+    checkWin() {
+      for (let combination of winningCombinations) {
+        const a = combination[0];
+        const b = combination[1];
+        const c = combination[2];
+
+        const marker1 = board[a];
+        const marker2 = board[b];
+        const marker3 = board[c];
+
+        // Check for 3 equal markers
+        if (marker1 === marker2 && marker2 === marker3 && marker1 !== "") {
+          return marker1; // Return winning marker
+        }
+      }
+      return null; // No winner found after checking all combinations
+    },
   };
 })();
 
 // Tests
-GameBoard.placeMarker(4, "X");
+GameBoard.placeMarker(0, "O");
+GameBoard.placeMarker(4, "O");
+GameBoard.placeMarker(8, "O");
 GameBoard.printBoard();
 
 /* TODO
