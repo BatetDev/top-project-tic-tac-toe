@@ -71,20 +71,22 @@ const GameBoard = (function () {
       }
       return null; // No winner found after checking all combinations
     },
+    isFull() {
+      return board.every((cell) => cell !== "");
+    },
   };
 })();
 
 // Tests
-GameBoard.placeMarker(0, "O");
-GameBoard.placeMarker(4, "O");
-GameBoard.placeMarker(8, "O");
 GameBoard.printBoard();
 
 /* TODO
 
-Day 3: Build checkWin (focus on 1-2 winning combinations first).
+1Create Player Factory:
+Generate player objects with names and markers (X or O).
 
-Day 4: Finish checkWin logic and test all 8 cases.
+2Build GameController: Manage turns, switch players, and handle win/tie conditions.
 
-Day 5: Create Player factory. 
+3Integrate checkWin and isFull:
+
 */
