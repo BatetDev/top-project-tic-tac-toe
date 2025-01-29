@@ -5,6 +5,21 @@ const GameBoard = (function () {
   // Create a 3x3 1d board and fill it with ""
   let board = Array(9).fill("");
 
+  // Winning combinations
+  const winningCombinations = [
+    // Rows
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    // Columns
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    // Diagonals
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
   // Public API
   return {
     // Helper function to visualize board in console
@@ -34,6 +49,7 @@ const GameBoard = (function () {
         return false; // Invalid move (out of bounds or cell occupied)
       }
     },
+    // Reset board
     reset() {
       board = Array(9).fill("");
     },
@@ -45,7 +61,6 @@ GameBoard.placeMarker(4, "X");
 GameBoard.printBoard();
 
 /* TODO
-Day 2: Implement reset and test it.
 
 Day 3: Build checkWin (focus on 1-2 winning combinations first).
 
