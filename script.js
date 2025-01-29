@@ -3,7 +3,7 @@
 // Gameboard Module
 const GameBoard = (function () {
   // Create a 3x3 1d board and fill it with ""
-  const board = Array(9).fill("");
+  let board = Array(9).fill("");
 
   // Public API
   return {
@@ -21,16 +21,21 @@ const GameBoard = (function () {
       return [...board]; // Return a copy of the board
     },
     placeMarker(position, marker) {
+      // Validate the position is within bounds (0-8) and the cell is empty
       if (
         position >= 0 &&
         position <= board.length - 1 &&
         board[position] === ""
       ) {
+        // Place the marker on the board
         board[position] = marker;
-        return true;
+        return true; // Successfully placed the marker
       } else {
-        return false;
+        return false; // Invalid move (out of bounds or cell occupied)
       }
+    },
+    reset() {
+      board = Array(9).fill("");
     },
   };
 })();
@@ -38,3 +43,13 @@ const GameBoard = (function () {
 // Tests
 GameBoard.placeMarker(4, "X");
 GameBoard.printBoard();
+
+/* TODO
+Day 2: Implement reset and test it.
+
+Day 3: Build checkWin (focus on 1-2 winning combinations first).
+
+Day 4: Finish checkWin logic and test all 8 cases.
+
+Day 5: Create Player factory. 
+*/
