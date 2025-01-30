@@ -1,11 +1,15 @@
 /* PROJECT TIC TAC TOE */
 
 // Gameboard Module
+// Manages the state of the Tic Tac Toe board and provides methods
+// to interact with it (e.g., placing markers, checking for wins, etc.).
+
 const GameBoard = (function () {
   // Create a 3x3 1d board and fill it with ""
   let board = Array(9).fill("");
 
-  // Winning combinations
+  // All possible winning combinations (rows, columns, diagonals)
+  // Each sub-array contains the indices of the board array that form a winning line.
   const winningCombinations = [
     // Rows
     [0, 1, 2],
@@ -32,28 +36,34 @@ const GameBoard = (function () {
         ${board[6] || " "} | ${board[7] || " "} | ${board[8] || " "}
         `);
     },
+
+    // Return a copy of the board
     getBoard() {
-      return [...board]; // Return a copy of the board
+      return [...board];
     },
+
+    // Place a marker (X or O) at the specified position if it's valid.
+    // Returns true if the marker was successfully placed, false otherwise.
     placeMarker(position, marker) {
-      // Validate the position is within bounds (0-8) and the cell is empty
       if (
         position >= 0 &&
         position <= board.length - 1 &&
         board[position] === ""
       ) {
-        // Place the marker on the board
         board[position] = marker;
-        return true; // Successfully placed the marker
+        return true;
       } else {
-        return false; // Invalid move (out of bounds or cell occupied)
+        return false;
       }
     },
-    // Reset board
+
+    // Reset the board to its initial state (all cells empty).
     reset() {
       board = Array(9).fill("");
     },
-    // Check for winner
+
+    // Check if there's a winning combination on the board.
+    // Returns the winning marker (X or O) if found, otherwise null.
     checkWin() {
       for (let combination of winningCombinations) {
         const a = combination[0];
@@ -64,13 +74,15 @@ const GameBoard = (function () {
         const marker2 = board[b];
         const marker3 = board[c];
 
-        // Check for 3 equal markers
         if (marker1 === marker2 && marker2 === marker3 && marker1 !== "") {
-          return marker1; // Return winning marker
+          return marker1;
         }
       }
-      return null; // No winner found after checking all combinations
+      return null;
     },
+
+    // Check if the board is full (no empty cells remaining).
+    // Returns true if the board is full, otherwise false.
     isFull() {
       return board.every((cell) => cell !== "");
     },
