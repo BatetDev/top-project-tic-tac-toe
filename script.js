@@ -100,15 +100,22 @@ const player2 = Player("Player 2", "O");
 // Manages the flow of the game, including player turns, win/tie detection
 // and interactions with the GameBoard and Player objects.
 const GameController = (function () {
-  const gameBoard = GameBoard; // Reference to the GameBoard module
+  // Reference to the GameBoard module for board-related operations
+  const gameBoard = GameBoard;
 
-  const players = [player1, player2]; // Array of player objects
-  let currentPlayer = player1; // Tracks the active player
+  // Array of player objects
+  const players = [player1, player2];
+
+  // Tracks the active player
+  let currentPlayer = player1;
 
   // Public API
   return {
+    // Initialize a new game by resetting the board and setting the starting player
     startNewGame() {
-      // TODO: Logic to initialize the game
+      gameBoard.reset();
+      currentPlayer = players[0];
+      console.log(`New game started! Current player: ${currentPlayer.name}`);
     },
 
     playTurn(position) {
