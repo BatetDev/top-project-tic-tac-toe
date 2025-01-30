@@ -88,13 +88,20 @@ const GameBoard = (function () {
   };
 })();
 
-// Player factory function
+// Player factory module
 // Creates and returns a player object with a name and marker.
 const Player = (name, marker) => ({ name, marker });
 
 // Create two players: Player 1 (X) and Player 2 (O)
 const player1 = Player("Player 1", "X");
 const player2 = Player("Player 2", "O");
+
+// GameController module
+// Manages the flow of the game, including player turns, win/tie detection
+// and interactions with the GameBoard and Player objects.
+const GameController = (function () {
+  const gameBoard = GameBoard; // Reference to the GameBoard module
+})();
 
 // Tests
 GameBoard.printBoard();
