@@ -3,7 +3,6 @@
 // Gameboard Module
 // Manages the state of the Tic Tac Toe board and provides methods
 // to interact with it (e.g., placing markers, checking for wins, etc.).
-
 const GameBoard = (function () {
   // Create a 3x3 1d board and fill it with ""
   let board = Array(9).fill("");
@@ -88,6 +87,14 @@ const GameBoard = (function () {
     },
   };
 })();
+
+// Player factory function
+// Creates and returns a player object with a name and marker.
+const Player = (name, marker) => ({ name, marker });
+
+// Create two players: Player 1 (X) and Player 2 (O)
+const player1 = Player("Player 1", "X");
+const player2 = Player("Player 2", "O");
 
 // Tests
 GameBoard.printBoard();
