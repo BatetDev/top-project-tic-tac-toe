@@ -107,18 +107,18 @@ const GameController = (function () {
 
   // Public API
   return {
-    // Temporary method for testing
-    logVariables() {
-      console.log("GameBoard:", gameBoard);
-      console.log("Players:", players);
-      console.log("Current Player:", currentPlayer);
+    startNewGame() {
+      // TODO: Logic to initialize the game
+    },
+
+    playTurn(position) {
+      // TODO: Logic to handle a player's turn
     },
   };
 })();
 
 // Tests
 GameBoard.printBoard();
-GameController.logVariables();
 
 /* TODO
 
