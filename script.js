@@ -101,10 +101,24 @@ const player2 = Player("Player 2", "O");
 // and interactions with the GameBoard and Player objects.
 const GameController = (function () {
   const gameBoard = GameBoard; // Reference to the GameBoard module
+
+  const players = [player1, player2]; // Array of player objects
+  let currentPlayer = player1; // Tracks the active player
+
+  // Public API
+  return {
+    // Temporary method for testing
+    logVariables() {
+      console.log("GameBoard:", gameBoard);
+      console.log("Players:", players);
+      console.log("Current Player:", currentPlayer);
+    },
+  };
 })();
 
 // Tests
 GameBoard.printBoard();
+GameController.logVariables();
 
 /* TODO
 
