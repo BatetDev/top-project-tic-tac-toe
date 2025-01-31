@@ -103,23 +103,44 @@ const GameController = (function () {
   // Reference to the GameBoard module for board-related operations
   const gameBoard = GameBoard;
 
-  // Array of player objects
+  // Array of player objects (Player 1 and Player 2)
   const players = [player1, player2];
 
-  // Tracks the active player
+  // Tracks the active player (starts with Player 1)
   let currentPlayer = player1;
 
   // Public API
   return {
     // Initialize a new game by resetting the board and setting the starting player
     startNewGame() {
-      gameBoard.reset();
-      currentPlayer = players[0];
+      gameBoard.reset(); // Clear the board
+      currentPlayer = players[0]; // Set the starting player
       console.log(`New game started! Current player: ${currentPlayer.name}`);
     },
 
+    // Handle a player's turn by placing a marker and checking for win/tie conditions
     playTurn(position) {
-      // TODO: Logic to handle a player's turn
+      // Place the current player's marker at the specified position
+      if (gameBoard.placeMarker(position, currentPlayer.marker)) {
+        gameBoard.printBoard(); // Visualize the updated board
+
+        // Check for a win
+        const winner = gameBoard.checkWin();
+        if (winner !== null) {
+          return `Game ends! ${currentPlayer.name} wins!`; // Announce the winner
+        }
+
+        // Check for a tie
+        if (gameBoard.isFull()) {
+          return "Game ends! It's a tie!"; // Announce a tie
+        }
+
+        // Switch to the other player
+        currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
+        return `Next player: ${currentPlayer.name}`; // Announce the next player
+      } else {
+        console.log("Invalid move! Try again."); // Handle invalid moves
+      }
     },
   };
 })();
