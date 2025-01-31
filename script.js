@@ -147,14 +147,3 @@ const GameController = (function () {
 
 // Tests
 GameBoard.printBoard();
-
-/* TODO
-
-1Create Player Factory:
-Generate player objects with names and markers (X or O).
-
-2Build GameController: Manage turns, switch players, and handle win/tie conditions.
-
-3Integrate checkWin and isFull:
-
-*/
