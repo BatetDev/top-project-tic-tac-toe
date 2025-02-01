@@ -8,12 +8,16 @@
     <title>TOP | Project: Tic Tac Toe</title>
   </head>
   <body class="bg-gray-400">
-    <h1 class="bg-gray-900 text-3xl text-emerald-400 p-3">
+    <h1 class="bg-gray-900 text-center text-3xl text-emerald-400 font-bold p-4">
       TOP - Project: Tic Tac Toe
     </h1>
 
-    <div class="game-container">
-      <div class="game-board">
+    <div class="game-container p-8 min-h-screen">
+      <!-- Game Board -->
+      <div
+        class="game-board mx-auto max-w-md grid grid-cols-3 g gap-1 bg-stone-300"
+      >
+        <!-- Cells -->
         <div class="cell" data-index="0"></div>
         <div class="cell" data-index="1"></div>
         <div class="cell" data-index="2"></div>
@@ -25,11 +29,19 @@
         <div class="cell" data-index="8"></div>
       </div>
 
-      <div class="message-area">
+      <!-- Message Area -->
+      <div
+        class="message-area mt-6 text-center text-xl text-gray-800 font-semibold"
+      >
         <p>Player X's turn</p>
       </div>
 
-      <button class="restart-button">Restart Game</button>
+      <!-- Restart Button -->
+      <button
+        class="btn restart-button mx-auto mt-6 block bg-slate-700 text-gray-100 uppercase hover:bg-green-700"
+      >
+        Restart Game
+      </button>
     </div>
   </body>
 </html>
