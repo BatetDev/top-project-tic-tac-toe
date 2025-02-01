@@ -107,7 +107,7 @@ const GameController = (function () {
   const players = [player1, player2];
 
   // Tracks the active player (starts with Player 1)
-  let currentPlayer = player1;
+  let currentPlayer = players[0];
 
   // Public API
   return {
@@ -141,6 +141,10 @@ const GameController = (function () {
       } else {
         console.log("Invalid move! Try again."); // Handle invalid moves
       }
+    },
+    // Expose currentPlayer
+    getCurrentPlayer() {
+      return currentPlayer;
     },
   };
 })();
