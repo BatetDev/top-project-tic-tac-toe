@@ -153,6 +153,34 @@ const DisplayController = (function () {
   const messageArea = document.querySelector(".message-area");
 
   // Public API
+  return {
+    // Comment placeholder
+    renderBoard() {
+      // Get the current state of the game board
+      const board = GameBoard.getBoard();
+
+      // Loop through each cell and update its content for each cell in cells
+      cells.forEach((cell) => {
+        // Get the cell's index from its data attribute
+        const index = Number(cell.dataset.index);
+
+        // Get the marker from the board array
+        const marker = board[index];
+
+        // Update the cell's text content
+        cell.textContent = marker;
+      });
+
+      // Update the message area
+      if (GameBoard.checkWin()) {
+        messageArea.textContent = `${currentPlayer.name} wins!`;
+      } else if (GameBoard.isFull()) {
+        messageArea.textContent = "It's a tie!";
+      } else {
+        messageArea.textContent = `${currentPlayer.name}'s turn`;
+      }
+    },
+  };
 })();
 
 // Tests
