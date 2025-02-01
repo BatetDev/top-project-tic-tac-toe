@@ -158,10 +158,14 @@ const DisplayController = (function () {
 
   // Public API
   return {
-    // Comment placeholder
+    // Renders the current state of the game board to the DOM.
+    // Updates cell contents and the message area based on the game state.
     renderBoard() {
       // Get the current state of the game board
       const board = GameBoard.getBoard();
+
+      // Get the current player
+      const currentPlayer = GameController.getCurrentPlayer();
 
       // Loop through each cell and update its content for each cell in cells
       cells.forEach((cell) => {
