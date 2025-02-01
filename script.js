@@ -145,5 +145,15 @@ const GameController = (function () {
   };
 })();
 
+// DisplayController Module
+// Handles all DOM interactions and rendering logic
+const DisplayController = (function () {
+  // Cache DOM elements
+  const cells = document.querySelectorAll(".cell");
+  const messageArea = document.querySelector(".message-area");
+
+  // Public API
+})();
+
 // Tests
 GameBoard.printBoard();
