@@ -212,11 +212,11 @@ const DisplayController = (function () {
 
       // Update the message area
       if (GameBoard.checkWin()) {
-        messageArea.textContent = `${currentPlayer.name} wins!`;
+        messageArea.textContent = `${currentPlayer.name} ( ${currentPlayer.marker} ) wins!`;
       } else if (GameBoard.isFull()) {
         messageArea.textContent = "It's a tie!";
       } else {
-        messageArea.textContent = `${currentPlayer.name}'s turn`;
+        messageArea.textContent = `${currentPlayer.name} ( ${currentPlayer.marker} )'s turn`;
       }
     },
   };
