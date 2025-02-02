@@ -25,17 +25,6 @@ const GameBoard = (function () {
 
   // Public API
   return {
-    // Helper function to visualize board in console
-    printBoard() {
-      console.log(`
-        ${board[0] || " "} | ${board[1] || " "} | ${board[2] || " "}
-        ---------
-        ${board[3] || " "} | ${board[4] || " "} | ${board[5] || " "}
-        ---------
-        ${board[6] || " "} | ${board[7] || " "} | ${board[8] || " "}
-        `);
-    },
-
     // Return a copy of the board
     getBoard() {
       return [...board];
@@ -115,7 +104,6 @@ const GameController = (function () {
     startNewGame() {
       gameBoard.reset(); // Clear the board
       currentPlayer = players[0]; // Set the starting player
-      console.log(`New game started! Current player: ${currentPlayer.name}`);
     },
 
     // Handle a player's turn by placing a marker and checking for win/tie conditions
@@ -214,6 +202,3 @@ const DisplayController = (function () {
     },
   };
 })();
-
-// Tests
-GameBoard.printBoard();
