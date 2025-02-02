@@ -122,24 +122,21 @@ const GameController = (function () {
     playTurn(position) {
       // Place the current player's marker at the specified position
       if (gameBoard.placeMarker(position, currentPlayer.marker)) {
-        gameBoard.printBoard(); // Visualize the updated board
-
         // Check for a win
-        const winner = gameBoard.checkWin();
-        if (winner !== null) {
-          return `Game ends! ${currentPlayer.name} wins!`; // Announce the winner
+        if (gameBoard.checkWin() !== null) {
+          return true; // Valid move, game ends
         }
 
         // Check for a tie
         if (gameBoard.isFull()) {
-          return "Game ends! It's a tie!"; // Announce a tie
+          return true; // Valid move, game ends
         }
 
         // Switch to the other player
         currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
-        return `Next player: ${currentPlayer.name}`; // Announce the next player
+        return true; // Valid move, game continues
       } else {
-        return null; // Handle invalid moves
+        return false; // Invalid move
       }
     },
     // Expose currentPlayer
@@ -172,13 +169,14 @@ const DisplayController = (function () {
     cells.forEach((cell) => {
       cell.addEventListener("click", () => {
         const index = Number(cell.dataset.index); // Get the clicked cell's index
-        const result = GameController.playTurn(index); // Call playTurn and store the result
+        const isValidMove = GameController.playTurn(index); // Call playTurn and check if the move was valid
 
-        if (result === null) {
+        if (!isValidMove) {
           // Handle invalid move
           messageArea.textContent = "Invalid move! Try again.";
         } else {
-          DisplayController.renderBoard(); // Re-render the board
+          // Re-render the board and update the message area
+          DisplayController.renderBoard();
         }
       });
     });
@@ -198,19 +196,14 @@ const DisplayController = (function () {
       // Get the current player
       const currentPlayer = GameController.getCurrentPlayer();
 
-      // Loop through each cell and update its content for each cell in cells
+      // Loop through each cell and update its content
       cells.forEach((cell) => {
-        // Get the cell's index from its data attribute
         const index = Number(cell.dataset.index);
-
-        // Get the marker from the board array
         const marker = board[index];
-
-        // Update the cell's text content
         cell.textContent = marker;
       });
 
-      // Update the message area
+      // Update the message area based on the game state
       if (GameBoard.checkWin()) {
         messageArea.textContent = `${currentPlayer.name} ( ${currentPlayer.marker} ) wins!`;
       } else if (GameBoard.isFull()) {
