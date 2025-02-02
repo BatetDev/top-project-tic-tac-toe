@@ -139,7 +139,7 @@ const GameController = (function () {
         currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
         return `Next player: ${currentPlayer.name}`; // Announce the next player
       } else {
-        console.log("Invalid move! Try again."); // Handle invalid moves
+        return null; // Handle invalid moves
       }
     },
     // Expose currentPlayer
@@ -171,13 +171,15 @@ const DisplayController = (function () {
     // Add click event listener to cells
     cells.forEach((cell) => {
       cell.addEventListener("click", () => {
-        // Get the clicked cell's index converted to number
-        const index = Number(cell.dataset.index);
+        const index = Number(cell.dataset.index); // Get the clicked cell's index
+        const result = GameController.playTurn(index); // Call playTurn and store the result
 
-        // Call GameController.playTurn(index) to process the move
-        GameController.playTurn(index);
-        // Re-render the board to reflect the updated state
-        DisplayController.renderBoard();
+        if (result === null) {
+          // Handle invalid move
+          messageArea.textContent = "Invalid move! Try again.";
+        } else {
+          DisplayController.renderBoard(); // Re-render the board
+        }
       });
     });
   }
