@@ -8,6 +8,6 @@
   }
 
   .btn {
-    @apply rounded-3xl px-6 py-2 bg-slate-700 text-gray-100 font-semibold uppercase transition-all duration-200 ease-in-out hover:bg-green-700 hover:scale-[1.02];
+    @apply rounded-3xl px-6 py-2  font-semibold transition-all duration-200 ease-in-out  hover:scale-[1.02];
   }
 }

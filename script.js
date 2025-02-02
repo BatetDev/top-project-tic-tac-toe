@@ -168,6 +168,18 @@ const DisplayController = (function () {
       // Re-render the board to reflect the reset state
       DisplayController.renderBoard();
     });
+    // Add click event listener to cells
+    cells.forEach((cell) => {
+      cell.addEventListener("click", () => {
+        // Get the clicked cell's index converted to number
+        const index = Number(cell.dataset.index);
+
+        // Call GameController.playTurn(index) to process the move
+        GameController.playTurn(index);
+        // Re-render the board to reflect the updated state
+        DisplayController.renderBoard();
+      });
+    });
   }
 
   // Call initializeEventListeners() before returning the public API
