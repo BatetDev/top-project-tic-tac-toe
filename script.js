@@ -155,6 +155,23 @@ const DisplayController = (function () {
   // Cache DOM elements
   const cells = document.querySelectorAll(".cell");
   const messageArea = document.querySelector(".message-area");
+  const restartButton = document.querySelector(".restart-button");
+
+  // Initialize event listeners for DOM interactions
+  function initializeEventListeners() {
+    // Add click event listener to restart button
+    restartButton.addEventListener("click", () => {
+      // Reset the game board and current player
+      GameBoard.reset();
+      GameController.startNewGame();
+
+      // Re-render the board to reflect the reset state
+      DisplayController.renderBoard();
+    });
+  }
+
+  // Call initializeEventListeners() before returning the public API
+  initializeEventListeners();
 
   // Public API
   return {
