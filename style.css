@@ -2,13 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  label {
+    @apply uppercase text-lg font-semibold tracking-widest rounded-full;
+  }
+}
+
 @layer components {
   .cell {
-    @apply cursor-pointer border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold transition-all duration-200 ease-in-out hover:bg-gray-50;
+    @apply cursor-pointer border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold uppercase transition-all duration-200 ease-in-out hover:bg-gray-50;
   }
 
   .btn {
-    @apply rounded-3xl px-6 py-2  font-semibold transition-all duration-200 ease-in-out  hover:scale-[1.02];
+    @apply rounded-3xl px-6 py-2 uppercase text-lg font-semibold transition-all duration-200 ease-in-out  hover:scale-[1.02];
   }
 }
 

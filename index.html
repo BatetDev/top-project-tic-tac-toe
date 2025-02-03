@@ -13,9 +13,24 @@
     </h1>
 
     <div class="game-container p-8 min-h-screen">
+      <!-- Players' names input -->
+      <div
+        id="player-inputs"
+        class="flex flex-col max-w-md justify-center items-center mx-auto gap-3 p-4"
+      >
+        <label for="player1-name">Player 1 Name:</label>
+        <input type="text" id="player1-name" />
+
+        <label for="player2-name">Player 2 Name:</label>
+        <input type="text" id="player2-name" />
+
+        <button id="start-game-button" class="btn bg-emerald-400">
+          Start Game
+        </button>
+      </div>
       <!-- Game Board -->
       <div
-        class="game-board mx-auto max-w-md grid grid-cols-3 g gap-1 bg-stone-900 p-6 rounded-xl"
+        class="game-board mx-auto max-w-md grid grid-cols-3 gap-1 bg-stone-900 p-6 rounded-xl"
       >
         <!-- Cells -->
         <div class="cell" data-index="0"></div>
@@ -38,7 +53,8 @@
 
       <!-- Restart Button -->
       <button
-        class="btn restart-button mx-auto mt-6 block bg-slate-700 text-gray-100 uppercase hover:bg-green-700"
+        class="btn mx-auto mt-6 block bg-slate-700 text-gray-100 hover:bg-green-700"
+        id="restart-button"
       >
         Restart Game
       </button>

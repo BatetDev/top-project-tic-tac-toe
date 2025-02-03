@@ -167,7 +167,7 @@ const DisplayController = (function () {
   // Cache DOM elements
   const cells = document.querySelectorAll(".cell");
   const messageArea = document.querySelector(".message-area");
-  const restartButton = document.querySelector(".restart-button");
+  const restartButton = document.querySelector("#restart-button");
 
   // Initialize event listeners for DOM interactions
   function initializeEventListeners() {
