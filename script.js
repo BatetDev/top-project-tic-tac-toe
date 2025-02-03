@@ -98,25 +98,36 @@ const GameController = (function () {
   // Tracks the active player (starts with Player 1)
   let currentPlayer = players[0];
 
+  // Tracks whether the game is still ongoing or over
+  let gameOver = false;
+
   // Public API
   return {
     // Initialize a new game by resetting the board and setting the starting player
     startNewGame() {
       gameBoard.reset(); // Clear the board
+      gameOver = false; // Reset gameOver flag
       currentPlayer = players[0]; // Set the starting player
     },
 
     // Handle a player's turn by placing a marker and checking for win/tie conditions
     playTurn(position) {
+      // Check if the game is over
+      if (gameOver) {
+        return false; // Ignore the move
+      }
+
       // Place the current player's marker at the specified position
       if (gameBoard.placeMarker(position, currentPlayer.marker)) {
         // Check for a win
         if (gameBoard.checkWin() !== null) {
+          gameOver = true; // Set gameOver to true
           return true; // Valid move, game ends
         }
 
         // Check for a tie
         if (gameBoard.isFull()) {
+          gameOver = true; // Set gameOver to true
           return true; // Valid move, game ends
         }
 
