@@ -715,7 +715,7 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(168 162 158 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
-  color: rgb(120 113 108 / var(--tw-text-opacity, 1));
+  color: rgb(87 83 78 / var(--tw-text-opacity, 1));
 }
 
 .disabled:hover {

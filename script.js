@@ -171,6 +171,11 @@ const DisplayController = (function () {
     // Add click event listener to cells
     cells.forEach((cell) => {
       cell.addEventListener("click", () => {
+        // Check if the game is over
+        if (GameController.getGameOver()) {
+          return; // Do nothing if the game is over
+        }
+
         const index = Number(cell.dataset.index); // Get the clicked cell's index
         const isValidMove = GameController.playTurn(index); // Call playTurn and check if the move was valid
 

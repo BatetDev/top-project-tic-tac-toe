@@ -14,6 +14,6 @@
 
 @layer utilities {
   .disabled {
-    @apply bg-stone-400 hover:bg-stone-400 cursor-not-allowed text-stone-500;
+    @apply bg-stone-400 hover:bg-stone-400 cursor-not-allowed text-stone-600;
   }
 }
