@@ -142,6 +142,10 @@ const GameController = (function () {
     getCurrentPlayer() {
       return currentPlayer;
     },
+    // Expose gameOver
+    getGameOver() {
+      return gameOver;
+    },
   };
 })();
 
@@ -195,11 +199,21 @@ const DisplayController = (function () {
       // Get the current player
       const currentPlayer = GameController.getCurrentPlayer();
 
+      // Get game state
+      const gameOver = GameController.getGameOver();
+
       // Loop through each cell and update its content
       cells.forEach((cell) => {
         const index = Number(cell.dataset.index);
         const marker = board[index];
         cell.textContent = marker;
+
+        // Disable the cells if the game is over
+        if (gameOver) {
+          cell.classList.add("disabled");
+        } else {
+          cell.classList.remove("disabled");
+        }
       });
 
       // Update the message area based on the game state

@@ -4,10 +4,16 @@
 
 @layer components {
   .cell {
-    @apply border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold transition-all duration-200 ease-in-out hover:bg-gray-50;
+    @apply cursor-pointer border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold transition-all duration-200 ease-in-out hover:bg-gray-50;
   }
 
   .btn {
     @apply rounded-3xl px-6 py-2  font-semibold transition-all duration-200 ease-in-out  hover:scale-[1.02];
+  }
+}
+
+@layer utilities {
+  .disabled {
+    @apply bg-stone-400 hover:bg-stone-400 cursor-not-allowed text-stone-500;
   }
 }
