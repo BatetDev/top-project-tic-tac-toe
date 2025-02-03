@@ -16,4 +16,8 @@
   .disabled {
     @apply bg-stone-400 hover:bg-stone-400 cursor-not-allowed text-stone-600;
   }
+
+  .winning-cell {
+    @apply bg-green-700 hover:bg-green-700 text-amber-300 cursor-none;
+  }
 }

@@ -63,10 +63,10 @@ const GameBoard = (function () {
         const marker3 = board[c];
 
         if (marker1 === marker2 && marker2 === marker3 && marker1 !== "") {
-          return marker1;
+          return [a, b, c];
         }
       }
-      return null;
+      return null; // No winning combination found
     },
 
     // Check if the board is full (no empty cells remaining).
@@ -101,6 +101,9 @@ const GameController = (function () {
   // Tracks whether the game is still ongoing or over
   let gameOver = false;
 
+  // Store the winning combination
+  let winningCombination = null;
+
   // Public API
   return {
     // Initialize a new game by resetting the board and setting the starting player
@@ -108,6 +111,7 @@ const GameController = (function () {
       gameBoard.reset(); // Clear the board
       gameOver = false; // Reset gameOver flag
       currentPlayer = players[0]; // Set the starting player
+      winningCombination = null; // Reset winning combination
     },
 
     // Handle a player's turn by placing a marker and checking for win/tie conditions
@@ -119,9 +123,12 @@ const GameController = (function () {
 
       // Place the current player's marker at the specified position
       if (gameBoard.placeMarker(position, currentPlayer.marker)) {
+        // Get the winning combination
+        winningCombination = gameBoard.checkWin(); // Get the winning combination
+
         // Check for a win
-        if (gameBoard.checkWin() !== null) {
-          gameOver = true; // Set gameOver to true
+        if (winningCombination !== null) {
+          gameOver = true;
           return true; // Valid move, game ends
         }
 
@@ -145,6 +152,11 @@ const GameController = (function () {
     // Expose gameOver
     getGameOver() {
       return gameOver;
+    },
+
+    // Expose the winning combination
+    getWinningCombination() {
+      return winningCombination;
     },
   };
 })();
@@ -207,6 +219,9 @@ const DisplayController = (function () {
       // Get game state
       const gameOver = GameController.getGameOver();
 
+      // Get the winning combination
+      const winningCombination = GameController.getWinningCombination();
+
       // Loop through each cell and update its content
       cells.forEach((cell) => {
         const index = Number(cell.dataset.index);
@@ -218,6 +233,13 @@ const DisplayController = (function () {
           cell.classList.add("disabled");
         } else {
           cell.classList.remove("disabled");
+        }
+
+        // Highlight the winning cells
+        if (winningCombination && winningCombination.includes(index)) {
+          cell.classList.add("winning-cell");
+        } else {
+          cell.classList.remove("winning-cell");
         }
       });
 
