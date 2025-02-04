@@ -179,6 +179,7 @@ const DisplayController = (function () {
   const cells = document.querySelectorAll(".cell");
   const messageArea = document.querySelector(".message-area");
   const startRestartButton = document.querySelector("#start-restart-button");
+  const editIcons = document.querySelectorAll(".edit-icon");
 
   // Private helper function to update button text
   function updateButtonText() {
@@ -197,6 +198,14 @@ const DisplayController = (function () {
       DisplayController.renderBoard(); // Re-render the board
       updateButtonText(); // Update the button text
     });
+
+    // Add click event listeners to edit icons
+    editIcons.forEach((icon) => {
+      icon.addEventListener("click", () => {
+        console.log("It's working!");
+      });
+    });
+
     // Add click event listener to cells
     cells.forEach((cell) => {
       cell.addEventListener("click", () => {
