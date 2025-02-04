@@ -177,19 +177,22 @@ const DisplayController = (function () {
   const messageArea = document.querySelector(".message-area");
   const startRestartButton = document.querySelector("#start-restart-button");
 
+  // Private helper function to update button text
+  function updateButtonText() {
+    if (!GameController.getGameStarted() || GameController.getGameOver()) {
+      startRestartButton.textContent = "Start Game";
+    } else {
+      startRestartButton.textContent = "Restart Game";
+    }
+  }
+
   // Initialize event listeners for DOM interactions
   function initializeEventListeners() {
-    // Add click event listener to restart button
+    // Add click event listener to Start/Restart button
     startRestartButton.addEventListener("click", () => {
-      if (!GameController.getGameStarted() || GameController.getGameOver()) {
-        GameController.startNewGame();
-        DisplayController.renderBoard();
-        startRestartButton.textContent = "Restart Game"; // Update button text
-      } else {
-        // Restart the game
-        GameController.startNewGame();
-        DisplayController.renderBoard();
-      }
+      GameController.startNewGame(); // Reset the game state
+      DisplayController.renderBoard(); // Re-render the board
+      updateButtonText(); // Update the button text
     });
     // Add click event listener to cells
     cells.forEach((cell) => {
@@ -208,6 +211,7 @@ const DisplayController = (function () {
         } else {
           // Re-render the board and update the message area
           DisplayController.renderBoard();
+          updateButtonText();
         }
       });
     });
