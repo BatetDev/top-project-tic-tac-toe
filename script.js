@@ -199,10 +199,15 @@ const DisplayController = (function () {
       updateButtonText(); // Update the button text
     });
 
-    // Add click event listeners to edit icons
-    editIcons.forEach((icon) => {
-      icon.addEventListener("click", () => {
-        console.log("It's working!");
+    editIcons.forEach((editIcon, index) => {
+      editIcon.addEventListener("click", () => {
+        const player = index === 0 ? player1 : player2; // Determine which player is being edited
+        const newName = prompt(`Enter ${player.name}'s new name:`, player.name); // Show prompt
+        if (newName) {
+          player.name = newName; // Update player name
+          document.querySelector(`#player${index + 1}-name`).textContent =
+            newName; // Update DOM
+        }
       });
     });
 
@@ -231,6 +236,10 @@ const DisplayController = (function () {
 
   // Call initializeEventListeners() before returning the public API
   initializeEventListeners();
+
+  // Render initial player names into the DOM
+  document.querySelector("#player1-name").textContent = player1.name;
+  document.querySelector("#player2-name").textContent = player2.name;
 
   // Public API
   return {
