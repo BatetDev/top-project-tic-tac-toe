@@ -1,5 +1,8 @@
 /* PROJECT TIC TAC TOE */
 
+// Initialize Lucide
+lucide.createIcons();
+
 // Gameboard Module
 // Manages the state of the Tic Tac Toe board and provides methods
 // to interact with it (e.g., placing markers, checking for wins, etc.).

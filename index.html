@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="output.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="script.js" defer></script>
     <title>TOP | Project: Tic Tac Toe</title>
   </head>
@@ -13,16 +14,19 @@
     </h1>
 
     <div class="game-container p-8 min-h-screen">
-      <!-- Players' names input -->
+      <!-- Players Info -->
       <div
-        id="player-inputs"
-        class="flex flex-col max-w-md justify-center items-center mx-auto gap-3 p-4"
+        id="player-names"
+        class="flex justify-center items-center gap-12 p-8"
       >
-        <label for="player1-name">Player 1 Name:</label>
-        <input type="text" id="player1-name" />
-
-        <label for="player2-name">Player 2 Name:</label>
-        <input type="text" id="player2-name" />
+        <div class="player-name">
+          <span id="player1-name">Player 1</span>
+          <button class="edit-icon"><i data-lucide="pencil"></i></button>
+        </div>
+        <div class="player-name">
+          <span id="player2-name">Player 2</span>
+          <button class="edit-icon"><i data-lucide="pencil"></i></button>
+        </div>
       </div>
 
       <!-- Game Board -->
