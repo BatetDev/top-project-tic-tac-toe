@@ -77,7 +77,7 @@ const GameBoard = (function () {
   };
 })();
 
-// Player factory module
+// Player factory moduleccc
 // Creates and returns a player object with a name and marker.
 const Player = (name, marker) => ({ name, marker });
 
@@ -98,6 +98,9 @@ const GameController = (function () {
   // Tracks the active player (starts with Player 1)
   let currentPlayer = players[0];
 
+  // Tracks whether the game is running
+  let gameStarted = false;
+
   // Tracks whether the game is still ongoing or over
   let gameOver = false;
 
@@ -109,6 +112,7 @@ const GameController = (function () {
     // Initialize a new game by resetting the board and setting the starting player
     startNewGame() {
       gameBoard.reset(); // Clear the board
+      gameStarted = true; // Set gameStarted to true
       gameOver = false; // Reset gameOver flag
       currentPlayer = players[0]; // Set the starting player
       winningCombination = null; // Reset winning combination
@@ -154,6 +158,10 @@ const GameController = (function () {
       return gameOver;
     },
 
+    getGameStarted() {
+      return gameStarted; // Expose gameStarted flag
+    },
+
     // Expose the winning combination
     getWinningCombination() {
       return winningCombination;
@@ -167,18 +175,21 @@ const DisplayController = (function () {
   // Cache DOM elements
   const cells = document.querySelectorAll(".cell");
   const messageArea = document.querySelector(".message-area");
-  const restartButton = document.querySelector("#restart-button");
+  const startRestartButton = document.querySelector("#start-restart-button");
 
   // Initialize event listeners for DOM interactions
   function initializeEventListeners() {
     // Add click event listener to restart button
-    restartButton.addEventListener("click", () => {
-      // Reset the game board and current player
-      GameBoard.reset();
-      GameController.startNewGame();
-
-      // Re-render the board to reflect the reset state
-      DisplayController.renderBoard();
+    startRestartButton.addEventListener("click", () => {
+      if (!GameController.getGameStarted() || GameController.getGameOver()) {
+        GameController.startNewGame();
+        DisplayController.renderBoard();
+        startRestartButton.textContent = "Restart Game"; // Update button text
+      } else {
+        // Restart the game
+        GameController.startNewGame();
+        DisplayController.renderBoard();
+      }
     });
     // Add click event listener to cells
     cells.forEach((cell) => {
@@ -249,7 +260,7 @@ const DisplayController = (function () {
       } else if (GameBoard.isFull()) {
         messageArea.textContent = "It's a tie!";
       } else {
-        messageArea.textContent = `${currentPlayer.name} ( ${currentPlayer.marker} )'s turn`;
+        messageArea.textContent = `${currentPlayer.name}'s ( ${currentPlayer.marker} ) turn`;
       }
     },
   };
