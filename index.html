@@ -8,55 +8,76 @@
     <script src="script.js" defer></script>
     <title>TOP | Project: Tic Tac Toe</title>
   </head>
-  <body class="bg-gray-400">
-    <h1 class="bg-gray-900 text-center text-3xl text-emerald-400 font-bold p-4">
-      TOP - Project: Tic Tac Toe
+  <body class="bg-zinc-900">
+    <h1
+      class="bg-gray-900 text-center text-[clamp(2rem,5vw,4rem)] text-emerald-400 font-bold py-2 px-3"
+    >
+      Tic Tac Toe
     </h1>
 
     <div class="game-container p-6 min-h-screen">
       <!-- Players Info -->
       <div
         id="players-info"
-        class="flex justify-center items-center gap-10 p-10"
+        class="flex justify-center items-center gap-8 px-8"
       >
-        <div class="player-name">
-          <span id="player1-name"></span>
-          <button class="edit-icon">
-            <i data-lucide="pencil"></i>
-          </button>
+        <!-- Player 1 Info -->
+        <div class="player-info">
+          <span>X</span>
+          <div class="player-name">
+            <span id="player1-name"></span>
+            <button class="edit-icon">
+              <i data-lucide="pencil"></i>
+            </button>
+          </div>
+          <div class="player-score">
+            <span>Score: </span>
+            <span id="player1-score">0</span>
+          </div>
         </div>
-        <div class="player-name">
-          <span id="player2-name"></span>
-          <button class="edit-icon"><i data-lucide="pencil"></i></button>
+
+        <!-- Player 2 Info -->
+        <div class="player-info">
+          <span>O</span>
+          <div class="player-name">
+            <span id="player2-name"></span>
+            <button class="edit-icon">
+              <i data-lucide="pencil"></i>
+            </button>
+          </div>
+          <div class="player-score">
+            <span>Score: </span>
+            <span id="player2-score">0</span>
+          </div>
         </div>
       </div>
 
       <!-- Game Board -->
       <div
-        class="game-board mx-auto max-w-md grid grid-cols-3 gap-1 bg-stone-900 p-6 rounded-xl"
+        class="game-board mx-auto max-w-md grid grid-cols-3 gap-1 bg-slate-700 p-4 rounded-xl"
       >
         <!-- Cells -->
-        <div class="cell" data-index="0"></div>
+        <div class="cell rounded-tl-xl" data-index="0"></div>
         <div class="cell" data-index="1"></div>
-        <div class="cell" data-index="2"></div>
+        <div class="cell rounded-tr-xl" data-index="2"></div>
         <div class="cell" data-index="3"></div>
         <div class="cell" data-index="4"></div>
         <div class="cell" data-index="5"></div>
-        <div class="cell" data-index="6"></div>
+        <div class="cell rounded-bl-xl" data-index="6"></div>
         <div class="cell" data-index="7"></div>
-        <div class="cell" data-index="8"></div>
+        <div class="cell rounded-br-xl" data-index="8"></div>
       </div>
 
       <!-- Message Area -->
       <div
-        class="message-area mt-6 text-center text-xl text-gray-800 font-semibold"
+        class="message-area mt-4 text-center text-xl text-gray-100 font-semibold"
       >
         <p>Player 1 ( X )'s turn</p>
       </div>
 
       <!-- Restart Button -->
       <button
-        class="btn mx-auto mt-6 block bg-slate-700 text-gray-100 hover:bg-green-700"
+        class="btn mx-auto mt-4 block bg-slate-700 text-gray-100 hover:bg-green-700"
         id="start-restart-button"
       >
         Start Game
