@@ -80,9 +80,9 @@ const GameBoard = (function () {
   };
 })();
 
-// Player factory moduleccc
-// Creates and returns a player object with a name and marker.
-const Player = (name, marker) => ({ name, marker });
+// Player factory module
+// Creates and returns a player object with a name, marker and a default score of 0.
+const Player = (name, marker, score = 0) => ({ name, marker, score });
 
 // Create two players: Player 1 (X) and Player 2 (O)
 const player1 = Player("Player 1", "X");
@@ -135,6 +135,7 @@ const GameController = (function () {
 
         // Check for a win
         if (winningCombination !== null) {
+          currentPlayer.score++;
           gameOver = true;
           return true; // Valid move, game ends
         }
@@ -155,6 +156,10 @@ const GameController = (function () {
     // Expose currentPlayer
     getCurrentPlayer() {
       return currentPlayer;
+    },
+    // Expose players scores
+    getPlayersScores() {
+      return [player1.score, player2.score];
     },
     // Expose gameOver
     getGameOver() {
@@ -287,6 +292,18 @@ const DisplayController = (function () {
       } else {
         messageArea.textContent = `${currentPlayer.name}'s ( ${currentPlayer.marker} ) turn`;
       }
+
+      // Update the scores
+      this.renderScores();
+    },
+    // Updates the players scores in the UI
+    renderScores() {
+      // Get the current players scores from GameController
+      const playerScores = GameController.getPlayersScores();
+
+      // Update the DOM elements with the scores
+      document.querySelector("#player1-score").textContent = playerScores[0];
+      document.querySelector("#player2-score").textContent = playerScores[1];
     },
   };
 })();
