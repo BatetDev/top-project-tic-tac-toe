@@ -153,6 +153,11 @@ const GameController = (function () {
         return false; // Invalid move
       }
     },
+    // Reset players scores
+    resetScores() {
+      player1.score = 0;
+      player2.score = 0;
+    },
     // Expose currentPlayer
     getCurrentPlayer() {
       return currentPlayer;
@@ -185,6 +190,7 @@ const DisplayController = (function () {
   const messageArea = document.querySelector(".message-area");
   const startRestartButton = document.querySelector("#start-restart-button");
   const editIcons = document.querySelectorAll(".edit-icon");
+  const resetScoresButton = document.querySelector("#reset-scores-button");
 
   // Private helper function to update button text
   function updateButtonText() {
@@ -202,6 +208,12 @@ const DisplayController = (function () {
       GameController.startNewGame(); // Reset the game state
       DisplayController.renderBoard(); // Re-render the board
       updateButtonText(); // Update the button text
+    });
+
+    // Add click event listener for Reset Scores button
+    resetScoresButton.addEventListener("click", () => {
+      GameController.resetScores();
+      DisplayController.renderScores();
     });
 
     editIcons.forEach((editIcon, index) => {
