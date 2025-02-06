@@ -10,11 +10,11 @@
 
 @layer components {
   .cell {
-    @apply cursor-pointer border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold uppercase transition-all duration-200 ease-in-out hover:bg-gray-50;
+    @apply cursor-pointer border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold uppercase transition-all duration-200 ease-in-out hover:bg-gray-50 hover:scale-[1.01];
   }
 
   .btn {
-    @apply rounded-3xl py-2 w-full uppercase text-[clamp(1.2rem,2vw,1.4rem)] font-semibold leading-tight tracking-wider transition-all duration-200 ease-in-out hover:scale-[1.02];
+    @apply rounded-3xl py-2 w-full uppercase text-[clamp(1.2rem,2vw,1.4rem)] font-semibold leading-tight tracking-wider transition-all duration-150 ease-in-out hover:scale-[1.03] hover:shadow-[0_0_4px_2px] hover:shadow-emerald-300;
   }
 
   .player-info {

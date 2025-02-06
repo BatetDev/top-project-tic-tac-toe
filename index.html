@@ -8,13 +8,13 @@
     <script src="script.js" defer></script>
     <title>TOP | Project: Tic Tac Toe</title>
   </head>
-  <body class="bg-gray-950 min-h-full overflow-hidden">
+  <body class="bg-gray-950 min-h-screen overflow-hidden">
     <!-- Header -->
     <header
       class="text-center tracking-widest py-4 -m-0.5 top-0 bg-gray-900 bg-opacity-25 backdrop-blur-sm"
     >
       <h1
-        class="text-[clamp(2rem,4vw,3rem)] text-emerald-400 font-bold uppercase"
+        class="text-[clamp(2rem,4vw,3rem)] text-emerald-400 font-bold uppercase order-1 md:order-2"
       >
         Tic Tac Toe
       </h1>
@@ -24,7 +24,7 @@
         class="flex justify-center items-center gap-4 px-4 mt-2.5 mx-auto w-full md:gap-6 md:max-w-lg lg:max-w-xl"
       >
         <!-- Player 1 Info -->
-        <div class="player-info flex flex-col items-center text-white">
+        <div class="player-info">
           <div class="player-name">
             <span id="player1-name"></span>
             <button class="edit-icon">
@@ -53,10 +53,12 @@
     </header>
 
     <!-- Game Container -->
-    <div class="game-container px-4 py-3 min-h-screen">
+    <main
+      class="game-container flex flex-col p-4 md:p-6 md:max-w-2xl mx-auto min-h-full"
+    >
       <!-- Game Board -->
       <div
-        class="game-board mx-auto max-w-md grid grid-cols-3 gap-1 bg-slate-700 p-4 rounded-xl"
+        class="game-board w-full grid grid-cols-3 gap-1 bg-slate-700 p-4 rounded-xl"
       >
         <!-- Cells -->
         <div class="cell rounded-tl-xl" data-index="0"></div>
@@ -76,7 +78,9 @@
         <p>Player 1 ( X )'s turn</p>
       </div>
       <!-- Buttons -->
-      <div class="buttons-wrapper flex justify-center items-center pb-1 gap-4">
+      <div
+        class="buttons-wrapper flex w-full max-w-2xl mx-auto items-center pb-1 gap-4 md:gap-6"
+      >
         <!-- Start/Restart Game Button -->
         <button
           class="btn bg-slate-700 text-gray-100 hover:bg-green-700"
@@ -92,6 +96,6 @@
           Reset Scores
         </button>
       </div>
-    </div>
+    </main>
   </body>
 </html>
