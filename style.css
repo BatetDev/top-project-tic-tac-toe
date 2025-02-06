@@ -18,7 +18,8 @@
   }
 
   .player-info {
-    @apply border-[3px] items-center text-white border-emerald-500 px-1.5 py-2 text-base tracking-wider font-bold uppercase rounded-2xl w-1/2 max-w-[50%];
+    @apply border-[3px] items-center text-white border-emerald-500 px-1.5 py-2 
+    text-[clamp(1.2rem,2vw,1.4rem)] tracking-wider font-bold uppercase rounded-2xl w-1/2;
   }
 
   .player-name {
