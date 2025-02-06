@@ -584,16 +584,15 @@ body {
 }
 
 .btn {
+  width: 100%;
   border-radius: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: clamp(1.2rem,2vw,1.4rem);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  line-height: 1.25;
+  letter-spacing: 0.05em;
   transition-property: all;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -619,7 +618,7 @@ body {
   font-size: clamp(1.2rem,2vw,1.4rem);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
@@ -673,12 +672,18 @@ body {
   margin-right: auto;
 }
 
-.mt-2\.5 {
-  margin-top: 0.625rem;
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+.my-2\.5 {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+.mt-2\.5 {
+  margin-top: 0.625rem;
 }
 
 .flex {
@@ -780,23 +785,27 @@ body {
   padding: 1rem;
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .text-center {
@@ -810,6 +819,10 @@ body {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[clamp\(1\.2rem\2c 2vw\2c 1\.4rem\)\] {
+  font-size: clamp(1.2rem,2vw,1.4rem);
 }
 
 .font-bold {
@@ -881,10 +894,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .md\:max-w-xl {
-    max-width: 36rem;
-  }
-
   .md\:max-w-lg {
     max-width: 32rem;
   }
@@ -895,10 +904,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .lg\:max-w-2xl {
-    max-width: 42rem;
-  }
-
   .lg\:max-w-xl {
     max-width: 36rem;
   }

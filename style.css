@@ -14,12 +14,12 @@
   }
 
   .btn {
-    @apply rounded-3xl px-6 py-2 uppercase text-lg font-semibold tracking-widest transition-all duration-200 ease-in-out  hover:scale-[1.02];
+    @apply rounded-3xl py-2 w-full uppercase text-[clamp(1.2rem,2vw,1.4rem)] font-semibold leading-tight tracking-wider transition-all duration-200 ease-in-out hover:scale-[1.02];
   }
 
   .player-info {
     @apply border-[3px] items-center text-white border-emerald-500 px-1.5 py-2 
-    text-[clamp(1.2rem,2vw,1.4rem)] tracking-wider font-bold uppercase rounded-2xl w-1/2;
+    text-[clamp(1.2rem,2vw,1.4rem)] tracking-widest font-bold uppercase rounded-2xl w-1/2;
   }
 
   .player-name {
