@@ -14,12 +14,12 @@
   }
 
   .btn {
-    @apply rounded-3xl py-2 w-full uppercase text-[clamp(1.2rem,2vw,1.4rem)] font-semibold leading-tight tracking-wider transition-all duration-150 ease-in-out hover:scale-[1.03] hover:shadow-[0_0_4px_2px] hover:shadow-emerald-300;
+    @apply text-gray-100 border-[3px] border-transparent rounded-3xl py-2 w-full uppercase text-[clamp(1.1rem,2vw,1.3rem)] font-semibold leading-tight tracking-wider transition-all duration-150 ease-in-out hover:scale-[1.02] hover:shadow-[0_0_5px_2px] hover:shadow-emerald-300 hover:border-gray-800;
   }
 
   .player-info {
-    @apply border-[3px] items-center text-white border-emerald-500 px-1.5 py-2 
-    text-[clamp(1.2rem,2vw,1.4rem)] tracking-widest font-bold uppercase rounded-2xl w-1/2;
+    @apply border-[3px] items-center text-white border-emerald-500 p-1.5 
+    text-[clamp(1.1rem,2vw,1.3rem)] tracking-widest leading-tight font-bold uppercase rounded-2xl w-1/2;
   }
 
   .player-name {
@@ -27,7 +27,7 @@
   }
 
   .edit-icon {
-    @apply bg-emerald-500 p-1 rounded-md transition-all duration-150 ease-in-out hover:bg-emerald-400 hover:scale-[1.03] hover:shadow-[0_0_4px_2px] hover:shadow-emerald-300;
+    @apply bg-emerald-700 p-1 rounded-md transition-all duration-150 ease-in-out hover:bg-emerald-500 hover:scale-[1.02] hover:shadow-[0_0_3px_2px] hover:shadow-emerald-400;
   }
 
   .edit-icon svg {
