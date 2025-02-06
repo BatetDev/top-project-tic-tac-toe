@@ -11,7 +11,7 @@
   <body class="bg-gray-950 min-h-screen flex flex-col">
     <!-- Header -->
     <header
-      class="text-center tracking-widest py-2 top-0 bg-gray-800 bg-opacity-30 backdrop-blur-sm"
+      class="text-center tracking-widest py-2 top-0 bg-gray-800 bg-opacity-30 backdrop-blur-sm shadow-emerald-800 shadow-[0_0_6px_2px]"
     >
       <h1
         class="text-[clamp(1.7rem,2.6vw,2.5rem)] text-emerald-400 font-bold uppercase leading-tight"
@@ -58,7 +58,7 @@
     >
       <!-- Game Board -->
       <div
-        class="game-board w-full mx-auto grid grid-cols-3 gap-1 bg-gray-800 bg-opacity-30 backdrop-blur-sm p-4 rounded-xl md:p-5"
+        class="game-board w-full mx-auto grid grid-cols-3 gap-1 bg-gray-800 bg-opacity-30 shadow-emerald-800 shadow-[0_0_6px_2px] backdrop-blur-sm p-4 rounded-xl md:p-5"
       >
         <!-- Cells -->
         <div class="cell rounded-tl-xl" data-index="0"></div>
@@ -73,20 +73,26 @@
       </div>
       <!-- Message Area -->
       <div
-        class="message-area my-3 text-center text-[clamp(1.3rem,2.5vw,1.6rem)] text-gray-100 font-bold"
+        class="message-area my-3 bg-gray-800 bg-opacity-30 backdrop-blur-sm py-2 rounded-xl shadow-emerald-800 shadow-[0_0_5px_2px] text-center text-[clamp(1.3rem,2.5vw,1.6rem)] text-gray-100 font-bold tracking-widest uppercase"
       >
-        <p>Player 1 ( X )'s turn</p>
+        <p>Player 1's ( X ) turn</p>
       </div>
       <!-- Buttons -->
       <div
         class="buttons-wrapper flex w-full max-w-full mx-auto items-center pb-1 gap-4 md:gap-6 md:pb-2"
       >
         <!-- Start/Restart Game Button -->
-        <button class="btn bg-emerald-700" id="start-restart-button">
+        <button
+          class="bg-emerald-700 btn bg-opacity-50 backdrop-blur-sm"
+          id="start-restart-button"
+        >
           Start Game
         </button>
         <!-- Reset Scores Button -->
-        <button class="btn bg-gray-800" id="reset-scores-button">
+        <button
+          class="bg-gray-700 btn bg-opacity-50 backdrop-blur-sm"
+          id="reset-scores-button"
+        >
           Reset Scores
         </button>
       </div>

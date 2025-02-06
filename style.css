@@ -10,15 +10,15 @@
 
 @layer components {
   .cell {
-    @apply cursor-pointer border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold uppercase transition-all duration-200 ease-in-out hover:bg-gray-50 hover:scale-[1.01] text-[clamp(2rem,10vw,4rem)];
+    @apply cursor-pointer border-2 border-gray-800 bg-gray-300 aspect-square flex items-center justify-center text-4xl font-bold uppercase transition-all duration-150 ease-in-out hover:bg-gray-200 hover:scale-[1.01] text-[clamp(2rem,10vw,4rem)];
   }
 
   .btn {
-    @apply text-gray-100 border-[3px] border-transparent rounded-3xl py-2 w-full uppercase text-[clamp(1.1rem,1.8vw,1.25rem)] font-semibold leading-tight tracking-wider transition-all duration-150 ease-in-out hover:scale-[1.02] hover:shadow-[0_0_5px_2px] hover:shadow-emerald-300 hover:border-gray-800;
+    @apply text-gray-100 border-[3px] border-transparent rounded-3xl py-2 w-full uppercase text-[clamp(1.1rem,1.8vw,1.25rem)] font-semibold leading-tight tracking-widest transition-all duration-150 ease-in-out shadow-emerald-800 shadow-[0_0_5px_2px] hover:scale-[1.02] hover:shadow-[0_0_5px_2px] hover:shadow-emerald-300 hover:border-gray-800 bg-opacity-30 backdrop-blur-sm;
   }
 
   .player-info {
-    @apply border-[3px] items-center text-white border-emerald-500 p-1.5 
+    @apply border-[3px] items-center text-gray-100 border-emerald-500 p-1.5 
     text-[clamp(1.1rem,1.8vw,1.25rem)] tracking-widest leading-tight font-bold uppercase rounded-2xl w-1/2;
   }
 
@@ -27,7 +27,7 @@
   }
 
   .edit-icon {
-    @apply bg-emerald-800 p-1 rounded-md transition-all duration-150 ease-in-out hover:bg-emerald-500 hover:scale-[1.02] hover:shadow-[0_0_3px_2px] hover:shadow-emerald-400;
+    @apply bg-emerald-700 p-1 rounded-md transition-all duration-150 ease-in-out hover:bg-emerald-500 hover:scale-[1.02] hover:shadow-[0_0_3px_2px] hover:shadow-emerald-400;
   }
 
   .edit-icon svg {
@@ -37,10 +37,10 @@
 
 @layer utilities {
   .disabled {
-    @apply bg-stone-400 hover:bg-stone-400 cursor-not-allowed text-stone-600;
+    @apply bg-zinc-400 hover:bg-zinc-400 hover:scale-100 cursor-not-allowed text-zinc-600;
   }
 
   .winning-cell {
-    @apply bg-green-700 hover:bg-green-700 text-amber-300 cursor-none;
+    @apply bg-emerald-600 hover:bg-emerald-600 hover:scale-100 text-amber-300 cursor-none;
   }
 }
