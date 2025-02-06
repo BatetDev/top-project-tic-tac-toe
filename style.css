@@ -10,16 +10,16 @@
 
 @layer components {
   .cell {
-    @apply cursor-pointer border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold uppercase transition-all duration-200 ease-in-out hover:bg-gray-50 hover:scale-[1.01];
+    @apply cursor-pointer border-2 border-gray-800 bg-stone-200 aspect-square flex items-center justify-center text-4xl font-bold uppercase transition-all duration-200 ease-in-out hover:bg-gray-50 hover:scale-[1.01] text-[clamp(2rem,10vw,4rem)];
   }
 
   .btn {
-    @apply text-gray-100 border-[3px] border-transparent rounded-3xl py-2 w-full uppercase text-[clamp(1.1rem,2vw,1.3rem)] font-semibold leading-tight tracking-wider transition-all duration-150 ease-in-out hover:scale-[1.02] hover:shadow-[0_0_5px_2px] hover:shadow-emerald-300 hover:border-gray-800;
+    @apply text-gray-100 border-[3px] border-transparent rounded-3xl py-2 w-full uppercase text-[clamp(1.1rem,1.8vw,1.25rem)] font-semibold leading-tight tracking-wider transition-all duration-150 ease-in-out hover:scale-[1.02] hover:shadow-[0_0_5px_2px] hover:shadow-emerald-300 hover:border-gray-800;
   }
 
   .player-info {
     @apply border-[3px] items-center text-white border-emerald-500 p-1.5 
-    text-[clamp(1.1rem,2vw,1.3rem)] tracking-widest leading-tight font-bold uppercase rounded-2xl w-1/2;
+    text-[clamp(1.1rem,1.8vw,1.25rem)] tracking-widest leading-tight font-bold uppercase rounded-2xl w-1/2;
   }
 
   .player-name {
@@ -27,7 +27,7 @@
   }
 
   .edit-icon {
-    @apply bg-emerald-700 p-1 rounded-md transition-all duration-150 ease-in-out hover:bg-emerald-500 hover:scale-[1.02] hover:shadow-[0_0_3px_2px] hover:shadow-emerald-400;
+    @apply bg-emerald-800 p-1 rounded-md transition-all duration-150 ease-in-out hover:bg-emerald-500 hover:scale-[1.02] hover:shadow-[0_0_3px_2px] hover:shadow-emerald-400;
   }
 
   .edit-icon svg {

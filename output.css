@@ -571,6 +571,7 @@ body {
   background-color: rgb(231 229 228 / var(--tw-bg-opacity, 1));
   font-size: 2.25rem;
   line-height: 2.5rem;
+  font-size: clamp(2rem,10vw,4rem);
   font-weight: 700;
   text-transform: uppercase;
   transition-property: all;
@@ -593,7 +594,7 @@ body {
   border-color: transparent;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: clamp(1.1rem,2vw,1.3rem);
+  font-size: clamp(1.1rem,1.8vw,1.25rem);
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.25;
@@ -626,7 +627,7 @@ body {
   --tw-border-opacity: 1;
   border-color: rgb(16 185 129 / var(--tw-border-opacity, 1));
   padding: 0.375rem;
-  font-size: clamp(1.1rem,2vw,1.3rem);
+  font-size: clamp(1.1rem,1.8vw,1.25rem);
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.25;
@@ -646,7 +647,7 @@ body {
 .edit-icon {
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(4 120 87 / var(--tw-bg-opacity, 1));
+  background-color: rgb(6 95 70 / var(--tw-bg-opacity, 1));
   padding: 0.25rem;
   transition-property: all;
   transition-duration: 150ms;
@@ -729,8 +730,8 @@ body {
   justify-content: center;
 }
 
-.justify-between {
-  justify-content: space-between;
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .gap-1 {
@@ -741,12 +742,12 @@ body {
   gap: 0.5rem;
 }
 
-.gap-4 {
-  gap: 1rem;
+.gap-3 {
+  gap: 0.75rem;
 }
 
-.overflow-hidden {
-  overflow: hidden;
+.gap-4 {
+  gap: 1rem;
 }
 
 .rounded-xl {
@@ -788,10 +789,6 @@ body {
   --tw-bg-opacity: 0.3;
 }
 
-.bg-opacity-40 {
-  --tw-bg-opacity: 0.4;
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -818,8 +815,8 @@ body {
   font-size: clamp(1.3rem,2.5vw,1.6rem);
 }
 
-.text-\[clamp\(1\.75rem\2c 3vw\2c 2\.75rem\)\] {
-  font-size: clamp(1.75rem,3vw,2.75rem);
+.text-\[clamp\(1\.7rem\2c 2\.6vw\2c 2\.5rem\)\] {
+  font-size: clamp(1.7rem,2.6vw,2.5rem);
 }
 
 .font-bold {
@@ -881,12 +878,12 @@ body {
 }
 
 @media (min-width: 768px) {
-  .md\:max-w-\[80vw\] {
-    max-width: 80vw;
+  .md\:max-w-\[78vw\] {
+    max-width: 78vw;
   }
 
-  .md\:max-w-screen-md {
-    max-width: 768px;
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 
   .md\:gap-5 {
@@ -907,7 +904,13 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .lg\:max-w-\[40vw\] {
-    max-width: 40vw;
+  .lg\:max-w-\[64vw\] {
+    max-width: 64vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:max-w-\[30vw\] {
+    max-width: 30vw;
   }
 }
