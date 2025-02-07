@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/BatetDev/top-project-tic-tac-toe">
-    <img src="images/screenshot.png" alt="Screenshot" width="80%">
+    <img src="images/screenshot.png" alt="Screenshot" width="60%">
   </a>
 <br />
   <p>
@@ -40,7 +40,7 @@ A simple Tic Tac Toe game built with JavaScript, HTML, and CSS. This project is 
 
 ## About The Project
 
-This project is a classic Tic Tac Toe game where two players take turns marking spaces on a 3x3 grid. The game includes features like win detection, tie detection, score tracking, player name editing, and the ability to reset the game or scores. The UI is styled using Tailwind CSS and Google Fonts, with a background pattern from Hero Patterns.
+This project is a classic Tic Tac Toe game where two players take turns marking spaces on a 3x3 grid. The game includes features like win detection, tie detection, score tracking, player name editing, and the ability to reset the game or scores. The UI is styled using Tailwind CSS and Google Fonts, with a background pattern from Hero Patterns and icons from Lucide Icons library.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
