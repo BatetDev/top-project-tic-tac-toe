@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/BatetDev/top-project-tic-tac-toe">
-    <img src="images/screenshot.png" alt="Logo" width="100%">
+    <img src="images/screenshot.png" alt="Screenshot" width="80%">
   </a>
 <br />
   <p>
@@ -47,7 +47,9 @@ This project is a classic Tic Tac Toe game where two players take turns marking 
 ### Built With
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+<br />
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+<br />
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -98,7 +100,9 @@ You can play the game directly in your browser by visiting the live demo:
 ## Contact
 
 ![X](https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white) [@BatetDev](https://x.com/BatetDev)
+<br />
 ![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white) [Francisco Batet](https://www.linkedin.com/in/francisco-batet-ab7274298/)
+<br />
 ![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white) batet.francisco@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
