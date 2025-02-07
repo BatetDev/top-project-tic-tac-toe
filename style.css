@@ -19,7 +19,7 @@
 
   .player-info {
     @apply border-[3px] items-center text-gray-100 border-emerald-500 p-1
-    text-[clamp(1.1rem,1.4vw,1.25rem)] tracking-wide leading-tight font-semibold uppercase rounded-2xl w-1/2 max-w-[50%];
+    text-[clamp(1.05rem,1.3vw,1.2rem)] tracking-wide leading-tight font-semibold uppercase rounded-2xl w-1/2 max-w-[50%];
   }
 
   .player-name {
