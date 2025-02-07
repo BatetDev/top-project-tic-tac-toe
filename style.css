@@ -23,7 +23,7 @@
   }
 
   .player-name {
-    @apply flex justify-center items-center gap-2.5 p-1;
+    @apply flex justify-center items-center gap-2 py-1;
   }
   /* TODO FIND PROPER FONT */
   .edit-icon {
