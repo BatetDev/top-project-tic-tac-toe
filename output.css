@@ -633,8 +633,8 @@ body {
   --tw-border-opacity: 1;
   border-color: rgb(16 185 129 / var(--tw-border-opacity, 1));
   padding: 0.25rem;
-  font-size: clamp(1.1rem,1.5vw,1.25rem);
-  font-weight: 700;
+  font-size: clamp(1.1rem,1.4vw,1.25rem);
+  font-weight: 600;
   text-transform: uppercase;
   line-height: 1.25;
   letter-spacing: 0.025em;
@@ -845,12 +845,8 @@ body {
   font-size: clamp(1.25rem,1.5vw,1.5rem);
 }
 
-.text-\[clamp\(1\.7rem\2c 2\.6vw\2c 2\.5rem\)\] {
-  font-size: clamp(1.7rem,2.6vw,2.5rem);
-}
-
-.text-\[clamp\(1\.6rem\2c 2\.4vw\2c 2\.4rem\)\] {
-  font-size: clamp(1.6rem,2.4vw,2.4rem);
+.text-\[clamp\(1\.5rem\2c 2\.2vw\2c 2\.25rem\)\] {
+  font-size: clamp(1.5rem,2.2vw,2.25rem);
 }
 
 .font-bold {
@@ -939,6 +935,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  .md\:max-w-\[76vw\] {
+    max-width: 76vw;
+  }
+
   .md\:max-w-\[78vw\] {
     max-width: 78vw;
   }
