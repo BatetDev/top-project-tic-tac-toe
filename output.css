@@ -594,7 +594,7 @@ body {
   border-color: transparent;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: clamp(1rem,1.2vw,1.2rem);
+  font-size: clamp(1rem,1.1vw,1.1rem);
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
@@ -632,7 +632,7 @@ body {
   --tw-border-opacity: 1;
   border-color: rgb(16 185 129 / var(--tw-border-opacity, 1));
   padding: 0.25rem;
-  font-size: clamp(1rem,1.2vw,1.2rem);
+  font-size: clamp(1rem,1.1vw,1.1rem);
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.25;
