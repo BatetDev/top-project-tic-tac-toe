@@ -5,7 +5,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/BatetDev/top-project-tic-tac-toe">
     <img src="images/screenshot.png" alt="Logo" width="100%">
   </a>
 <br />
@@ -68,7 +68,7 @@ To get a local copy of this project up and running, follow these steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/BatetDev/project-tic-tac-toe.git
+   git clone https://github.com/BatetDev/top-project-tic-tac-toe.git
    ```
 2. Open the index.html file in your browser to play the game.
 
