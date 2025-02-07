@@ -18,12 +18,12 @@
   }
 
   .player-info {
-    @apply border-[3px] items-center text-gray-100 border-emerald-500 p-1
+    @apply border-[3px] items-center text-gray-100 border-emerald-500 py-1
     text-[clamp(1rem,1.1vw,1.1rem)] leading-tight font-semibold uppercase rounded-2xl w-1/2 max-w-[50%];
   }
 
   .player-name {
-    @apply flex justify-center items-center gap-2 py-1;
+    @apply flex justify-center items-center gap-2 py-0.5;
   }
   /* TODO FIND PROPER FONT */
   .edit-icon {

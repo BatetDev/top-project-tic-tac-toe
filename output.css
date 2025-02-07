@@ -631,7 +631,8 @@ body {
   border-width: 3px;
   --tw-border-opacity: 1;
   border-color: rgb(16 185 129 / var(--tw-border-opacity, 1));
-  padding: 0.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   font-size: clamp(1rem,1.1vw,1.1rem);
   font-weight: 600;
   text-transform: uppercase;
@@ -645,8 +646,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
 /* TODO FIND PROPER FONT */
