@@ -79,7 +79,7 @@ To get a local copy of this project up and running, follow these steps.
 ## Usage
 
 You can play the game directly in your browser by visiting the live demo:
-👉 [Tic Tac Toe Live Demo](https://batetdev.github.io/top-project-tic-tac-toe/)
+👉 <a href="https://batetdev.github.io/top-project-tic-tac-toe/" target="_blank">Live Demo</a>
 
 - **Start the Game**: Click the "Start Game" button to begin.
 
